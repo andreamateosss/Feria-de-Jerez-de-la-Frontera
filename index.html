@@ -11,59 +11,70 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            background-color: #ec4899; /* Fondo rosa principal */
-            font-family: 'Poppins', system-ui, sans-serif; 
-            color: #ffffff; /* Letras blancas */
+            /* Fondo rosa clarito suave en degradado */
+            background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 50%, #f472b6 100%);
+            font-family: 'Poppins', system-ui, sans-serif;
+            color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            margin: 0;
+            overflow: hidden;
+            position: relative;
         }
 
+        /* Adornos decorativos flotantes de fondo */
+        .burbuja {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(4px);
+            pointer-events: none;
+        }
+
+        .burbuja-1 { width: 140px; height: 140px; top: 8%; left: 8%; }
+        .burbuja-2 { width: 220px; height: 220px; bottom: 8%; right: 6%; }
+        .burbuja-3 { width: 90px; height: 90px; bottom: 22%; left: 12%; }
+
+        /* Iconos decorativos con animación suave */
+        .destello {
+            position: absolute;
+            font-size: 1.8rem;
+            pointer-events: none;
+            animation: brillar 3s infinite ease-in-out alternate;
+        }
+
+        .destello-1 { top: 15%; right: 18%; animation-delay: 0s; }
+        .destello-2 { bottom: 25%; left: 20%; animation-delay: 1.5s; }
+        .destello-3 { top: 28%; left: 16%; animation-delay: 0.8s; }
+
+        @keyframes brillar {
+            0% { transform: scale(0.8) rotate(-5deg); opacity: 0.6; }
+            100% { transform: scale(1.2) rotate(10deg); opacity: 1; }
+        }
+
+        /* Tarjeta principal con fondo rosa translúcido para garantizar contraste */
         .tarjeta {
-            background-color: rgba(255, 255, 255, 0.15); /* Tarjeta translúcida para mantener armonía */
-            backdrop-filter: blur(8px);
-            padding: 2.5rem;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            background: rgba(219, 39, 119, 0.45); 
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 3rem 2.5rem;
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(190, 24, 93, 0.2);
             max-width: 480px;
             text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            position: relative;
+            z-index: 10;
         }
 
-        .subtitulo {
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 1.5px;
-            color: #fbcfe8; /* Rosa muy suave para contraste */
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        h1 {
-            color: #ffffff; /* Nombre en blanco */
-            font-weight: 600;
-            font-size: 1.8rem;
-            margin-top: 0;
-            margin-bottom: 1rem;
-        }
-
-        p {
-            color: #ffffff; /* Texto en blanco */
-            line-height: 1.6;
-            font-weight: 300;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="tarjeta">
-        <p class="subtitulo">Página Personal</p>
-        <h1>Andrea Mateos Perdigones</h1>
-        <p>¡Bienvenido a mi sitio web! Este espacio está personalizado con mi nombre, un fondo rosa y letras en blanco.</p>
-    </div>
-
-</body>
-</html>
+        .icono-encabezado {
+            font-size: 2.2rem;
+            margin

@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Feria de Jerez - Andrea Mateos Perdigones</title>
+    <title>La Feria de Jerez — Andrea Mateos Perdigones</title>
     
-    <!-- Fuente 'Poppins' de Google Fonts -->
+    <!-- Fuentes estilo Stradivarius: Syne (juvenil/editorial) + Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -18,115 +18,120 @@
         }
 
         body {
-            /* Fondo rosa clarito en degradado */
-            background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 50%, #f472b6 100%);
-            font-family: 'Poppins', system-ui, sans-serif;
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 2rem 1rem;
-            position: relative;
+            background-color: #faf7f5; /* Fondo beige cálido / nude suave característico */
+            color: #1a1a1a;
+            font-family: 'Montserrat', sans-serif;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Adornos decorativos flotantes de fondo */
-        .burbuja {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.35);
-            backdrop-filter: blur(4px);
-            pointer-events: none;
-        }
-
-        .burbuja-1 { width: 140px; height: 140px; top: 8%; left: 8%; }
-        .burbuja-2 { width: 220px; height: 220px; bottom: 8%; right: 6%; }
-        .burbuja-3 { width: 90px; height: 90px; bottom: 22%; left: 12%; }
-
-        /* Iconos decorativos animados */
-        .destello {
-            position: absolute;
-            font-size: 1.8rem;
-            pointer-events: none;
-            animation: brillar 3s infinite ease-in-out alternate;
-        }
-
-        .destello-1 { top: 10%; right: 15%; animation-delay: 0s; }
-        .destello-2 { bottom: 15%; left: 15%; animation-delay: 1.5s; }
-        .destello-3 { top: 25%; left: 12%; animation-delay: 0.8s; }
-
-        @keyframes brillar {
-            0% { transform: scale(0.8) rotate(-5deg); opacity: 0.6; }
-            100% { transform: scale(1.2) rotate(10deg); opacity: 1; }
-        }
-
-        /* Tarjeta principal */
-        .tarjeta {
-            background: rgba(219, 39, 119, 0.45); 
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            padding: 2.5rem 2rem;
-            border-radius: 24px;
-            box-shadow: 0 15px 35px rgba(190, 24, 93, 0.2);
+        /* BARRA SUPERIOR STYLISH */
+        header {
+            position: sticky;
+            top: 0;
             width: 100%;
-            max-width: 560px;
-            text-align: center;
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            position: relative;
-            z-index: 10;
+            height: 60px;
+            padding: 0 35px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(250, 247, 245, 0.92);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            border-bottom: 1px solid #ebe5df;
         }
 
-        .icono-encabezado {
-            font-size: 2.4rem;
-            margin-bottom: 0.4rem;
-            display: inline-block;
-        }
-
-        h1 {
-            color: #ffffff;
-            font-weight: 600;
-            font-size: 2.2rem;
-            margin-bottom: 0.3rem;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .subtitulo {
-            text-transform: uppercase;
-            font-size: 0.95rem;
+        .logo-marca {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 20px;
             letter-spacing: 2px;
-            color: rgba(255, 255, 255, 0.95);
-            font-weight: 400;
-            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            color: #1a1a1a;
+            text-decoration: none;
         }
 
-        .linea-separadora {
-            width: 60px;
-            height: 3px;
-            background: #ffffff;
-            margin: 1.2rem auto;
-            border-radius: 2px;
-            opacity: 0.85;
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
         }
 
-        p {
-            color: #ffffff;
-            line-height: 1.6;
-            font-weight: 300;
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        .nav-links a {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #1a1a1a;
+            text-decoration: none;
+            transition: color 0.2s ease;
         }
 
-        /* Contenedor del reproductor de video responsivo */
+        .nav-links a:hover {
+            color: #e07a5f;
+        }
+
+        /* SECCIÓN HERO / CONTENIDO PRINCIPAL */
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 50px 24px 80px 24px;
+        }
+
+        .badge-categoria {
+            display: inline-block;
+            background-color: #f2e9e1;
+            color: #8c7365;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
+        }
+
+        .encabezado-seccion {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1.titulo-principal {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: clamp(2.4rem, 6vw, 4.2rem);
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            color: #1a1a1a;
+            line-height: 1.05;
+            margin-bottom: 10px;
+        }
+
+        .subtitulo-autor {
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #666666;
+        }
+
+        /* TARJETA DE VÍDEO CON BORDES REDONDEADOS Y SOMBRA SUAVE */
+        .card-video {
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            border: 1px solid #eee7e0;
+            margin-bottom: 40px;
+        }
+
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+            width: 100%;
+            padding-bottom: 56.25%; /* Aspect Ratio 16:9 */
             height: 0;
+            border-radius: 14px;
             overflow: hidden;
-            border-radius: 16px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-            border: 2px solid rgba(255, 255, 255, 0.6);
-            margin-bottom: 1.5rem;
+            background-color: #000000;
         }
 
         .video-container iframe {
@@ -135,63 +140,155 @@
             left: 0;
             width: 100%;
             height: 100%;
-            border: 0;
+            border: none;
         }
 
-        /* Botón de enlace a YouTube */
-        .boton-link {
+        /* SECCIÓN DE DETALLES Y BOTÓN PILA (ROUNDED PILL) */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .info-card {
+            background: #ffffff;
+            padding: 22px 24px;
+            border-radius: 16px;
+            border: 1px solid #eee7e0;
+        }
+
+        .info-card h3 {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .info-card p {
+            font-size: 13px;
+            color: #555555;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        /* BOTÓN ESTILO JUVENIL ROUNDED */
+        .contenedor-boton {
+            text-align: center;
+        }
+
+        .btn-strad {
             display: inline-block;
-            background-color: #ffffff;
-            color: #be185d;
-            font-weight: 600;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 16px 42px;
+            border-radius: 50px; /* Estilo redondeado característico */
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
             text-decoration: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
         }
 
-        .boton-link:hover {
+        .btn-strad:hover {
+            background-color: #e07a5f;
             transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-            background-color: #fdf2f8;
+            box-shadow: 0 8px 20px rgba(224, 122, 95, 0.25);
+        }
+
+        /* FOOTER CÁLIDO Y LIMPIO */
+        footer {
+            border-top: 1px solid #ebe5df;
+            padding: 35px 20px;
+            text-align: center;
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #888888;
+            background-color: #faf7f5;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 0 20px;
+            }
+            .nav-links {
+                display: none;
+            }
+            .card-video {
+                padding: 12px;
+                border-radius: 16px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Elementos decorativos del fondo -->
-    <div class="burbuja burbuja-1"></div>
-    <div class="burbuja burbuja-2"></div>
-    <div class="burbuja burbuja-3"></div>
+    <!-- Navegación estilo tienda juvenil -->
+    <header>
+        <a href="#" class="logo-marca">ANDREA MATEOS</a>
 
-    <div class="destello destello-1">✨</div>
-    <div class="destello destello-2">💃</div>
-    <div class="destello destello-3">✨</div>
+        <ul class="nav-links">
+            <li><a href="#">Colección</a></li>
+            <li><a href="#">Editorial</a></li>
+            <li><a href="#">Vídeo</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </header>
 
-    <!-- Contenedor central -->
-    <div class="tarjeta">
-        <div class="icono-encabezado">💃</div>
-        <h1>La Feria de Jerez</h1>
-        <p class="subtitulo">Andrea Mateos Perdigones</p>
-        <div class="linea-separadora"></div>
-        <p>Disfruta de las bulerías de la Feria de Jerez directamente en la página web:</p>
-
-        <!-- Reproductor de YouTube integrado -->
-        <div class="video-container">
-            <iframe 
-                src="https://www.youtube.com/embed/ugEDSJcEOvc" 
-                title="Feria de Jerez Peña la bulería con Plazuela pura por bulerías" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-            </iframe>
+    <main>
+        <!-- Encabezado con estética fresca y juvenil -->
+        <div class="encabezado-seccion">
+            <span class="badge-categoria">Special Editorial</span>
+            <h1 class="titulo-principal">La Feria de Jerez</h1>
+            <p class="subtitulo-autor">Andrea Mateos Perdigones</p>
         </div>
 
-        <!-- Enlace directo -->
-        <a href="https://www.youtube.com/watch?v=ugEDSJcEOvc" target="_blank" rel="noopener noreferrer" class="boton-link">
-            Ver vídeo en YouTube ➔
-        </a>
-    </div>
+        <!-- Reproductor de vídeo integrado en tarjeta suave -->
+        <div class="card-video">
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/ugEDSJcEOvc" 
+                    title="La Feria de Jerez — Peña la Bulería" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Bloques de información estilo catálogo de moda -->
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>Edición</h3>
+                <p>Ambiente y compás por bulerías grabado en directo desde la Peña la Bulería.</p>
+            </div>
+            <div class="info-card">
+                <h3>Créditos</h3>
+                <p>Dirección artística y maquetación por Andrea Mateos Perdigones.</p>
+            </div>
+            <div class="info-card">
+                <h3>Localización</h3>
+                <p>Jerez de la Frontera, Andalucía, España.</p>
+            </div>
+        </div>
+
+        <!-- Botón interactivo principal -->
+        <div class="contenedor-boton">
+            <a href="https://www.youtube.com/watch?v=ugEDSJcEOvc" target="_blank" rel="noopener noreferrer" class="btn-strad">
+                Abrir en YouTube ➔
+            </a>
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>© 2026 ANDREA MATEOS PERDIGONES — EDICIÓN ESPECIAL FERIA DE JEREZ</p>
+    </footer>
 
 </body>
 </html>

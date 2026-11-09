@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Andrea Mateos Perdigones</title>
+    <title>La Feria de Jerez - Andrea Mateos Perdigones</title>
     
     <!-- Fuente 'Poppins' de Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +18,7 @@
         }
 
         body {
-            /* Fondo rosa clarito suave en degradado */
+            /* Fondo rosa clarito en degradado */
             background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 50%, #f472b6 100%);
             font-family: 'Poppins', system-ui, sans-serif;
             color: #ffffff;
@@ -43,7 +43,7 @@
         .burbuja-2 { width: 220px; height: 220px; bottom: 8%; right: 6%; }
         .burbuja-3 { width: 90px; height: 90px; bottom: 22%; left: 12%; }
 
-        /* Iconos decorativos con animación suave */
+        /* Iconos decorativos animados */
         .destello {
             position: absolute;
             font-size: 1.8rem;
@@ -60,7 +60,7 @@
             100% { transform: scale(1.2) rotate(10deg); opacity: 1; }
         }
 
-        /* Tarjeta principal con fondo rosa translúcido para garantizar contraste */
+        /* Tarjeta principal con cristal rosa translúcido */
         .tarjeta {
             background: rgba(219, 39, 119, 0.45); 
             backdrop-filter: blur(12px);
@@ -76,5 +76,65 @@
         }
 
         .icono-encabezado {
+            font-size: 2.4rem;
+            margin-bottom: 0.4rem;
+            display: inline-block;
+        }
+
+        h1 {
+            color: #ffffff;
+            font-weight: 600;
             font-size: 2.2rem;
-            margin
+            margin-bottom: 0.3rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitulo {
+            text-transform: uppercase;
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+        .linea-separadora {
+            width: 60px;
+            height: 3px;
+            background: #ffffff;
+            margin: 1.2rem auto 1.2rem auto;
+            border-radius: 2px;
+            opacity: 0.85;
+        }
+
+        p {
+            color: #ffffff;
+            line-height: 1.7;
+            font-weight: 300;
+            font-size: 1rem;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Elementos decorativos del fondo -->
+    <div class="burbuja burbuja-1"></div>
+    <div class="burbuja burbuja-2"></div>
+    <div class="burbuja burbuja-3"></div>
+
+    <div class="destello destello-1">✨</div>
+    <div class="destello destello-2">💃</div>
+    <div class="destello destello-3">✨</div>
+
+    <!-- Contenedor central -->
+    <div class="tarjeta">
+        <div class="icono-encabezado">💃</div>
+        <h1>La Feria de Jerez</h1>
+        <p class="subtitulo">Andrea Mateos Perdigones</p>
+        <div class="linea-separadora"></div>
+        <p>¡Bienvenido a mi sitio web dedicado a la Feria de Jerez! Conservando el fondo rosa clarito, adornos flotantes y texto en blanco.</p>
+    </div>
+
+</body>
+</html>

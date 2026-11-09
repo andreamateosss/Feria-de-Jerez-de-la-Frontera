@@ -26,7 +26,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            overflow: hidden;
+            padding: 2rem 1rem;
             position: relative;
         }
 
@@ -51,24 +51,25 @@
             animation: brillar 3s infinite ease-in-out alternate;
         }
 
-        .destello-1 { top: 15%; right: 18%; animation-delay: 0s; }
-        .destello-2 { bottom: 25%; left: 20%; animation-delay: 1.5s; }
-        .destello-3 { top: 28%; left: 16%; animation-delay: 0.8s; }
+        .destello-1 { top: 10%; right: 15%; animation-delay: 0s; }
+        .destello-2 { bottom: 15%; left: 15%; animation-delay: 1.5s; }
+        .destello-3 { top: 25%; left: 12%; animation-delay: 0.8s; }
 
         @keyframes brillar {
             0% { transform: scale(0.8) rotate(-5deg); opacity: 0.6; }
             100% { transform: scale(1.2) rotate(10deg); opacity: 1; }
         }
 
-        /* Tarjeta principal con cristal rosa translúcido */
+        /* Tarjeta principal */
         .tarjeta {
             background: rgba(219, 39, 119, 0.45); 
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            padding: 3rem 2.5rem;
+            padding: 2.5rem 2rem;
             border-radius: 24px;
             box-shadow: 0 15px 35px rgba(190, 24, 93, 0.2);
-            max-width: 480px;
+            width: 100%;
+            max-width: 560px;
             text-align: center;
             border: 2px solid rgba(255, 255, 255, 0.5);
             position: relative;
@@ -102,17 +103,58 @@
             width: 60px;
             height: 3px;
             background: #ffffff;
-            margin: 1.2rem auto 1.2rem auto;
+            margin: 1.2rem auto;
             border-radius: 2px;
             opacity: 0.85;
         }
 
         p {
             color: #ffffff;
-            line-height: 1.7;
+            line-height: 1.6;
             font-weight: 300;
-            font-size: 1rem;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Contenedor del reproductor de video responsivo */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            margin-bottom: 1.5rem;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Botón de enlace a YouTube */
+        .boton-link {
+            display: inline-block;
+            background-color: #ffffff;
+            color: #be185d;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .boton-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+            background-color: #fdf2f8;
         }
     </style>
 </head>
@@ -133,7 +175,22 @@
         <h1>La Feria de Jerez</h1>
         <p class="subtitulo">Andrea Mateos Perdigones</p>
         <div class="linea-separadora"></div>
-        <p>¡Bienvenido a mi sitio web dedicado a la Feria de Jerez! Conservando el fondo rosa clarito, adornos flotantes y texto en blanco.</p>
+        <p>Disfruta de las bulerías de la Feria de Jerez directamente en la página web:</p>
+
+        <!-- Reproductor de YouTube integrado -->
+        <div class="video-container">
+            <iframe 
+                src="https://www.youtube.com/embed/ugEDSJcEOvc" 
+                title="Feria de Jerez Peña la bulería con Plazuela pura por bulerías" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <!-- Enlace directo -->
+        <a href="https://www.youtube.com/watch?v=ugEDSJcEOvc" target="_blank" rel="noopener noreferrer" class="boton-link">
+            Ver vídeo en YouTube ➔
+        </a>
     </div>
 
 </body>

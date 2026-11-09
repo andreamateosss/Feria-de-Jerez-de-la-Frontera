@@ -12,9 +12,9 @@
     
     <style>
         body {
-            background-color: #e0f2fe; /* Fondo azul clarito */
+            background-color: #ec4899; /* Fondo rosa principal */
             font-family: 'Poppins', system-ui, sans-serif; 
-            color: #1e293b;
+            color: #ffffff; /* Letras blancas */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -23,25 +23,27 @@
         }
 
         .tarjeta {
-            background-color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.15); /* Tarjeta translúcida para mantener armonía */
+            backdrop-filter: blur(8px);
             padding: 2.5rem;
             border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             max-width: 480px;
             text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .subtitulo {
             text-transform: uppercase;
             font-size: 0.85rem;
             letter-spacing: 1.5px;
-            color: #0284c7;
+            color: #fbcfe8; /* Rosa muy suave para contraste */
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
 
         h1 {
-            color: #0f172a;
+            color: #ffffff; /* Nombre en blanco */
             font-weight: 600;
             font-size: 1.8rem;
             margin-top: 0;
@@ -49,7 +51,7 @@
         }
 
         p {
-            color: #475569;
+            color: #ffffff; /* Texto en blanco */
             line-height: 1.6;
             font-weight: 300;
         }
@@ -60,7 +62,7 @@
     <div class="tarjeta">
         <p class="subtitulo">Página Personal</p>
         <h1>Andrea Mateos Perdigones</h1>
-        <p>¡Bienvenido a mi sitio web! Este espacio está personalizado con mi nombre, un tono azul claro de fondo y una tipografía moderna.</p>
+        <p>¡Bienvenido a mi sitio web! Este espacio está personalizado con mi nombre, un fondo rosa y letras en blanco.</p>
     </div>
 
 </body>
